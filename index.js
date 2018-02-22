@@ -1,4 +1,13 @@
 const batteryBatches = [4, 5, 3, 4, 4, 6, 5];
+// reduce the array of products to a single value
+
+
+
+
+const totalBatteries = batteryBatches.reduce((total, batch) => total + batch, 0);
+
+
+
 
 const monologueLines = [
   'Who are you talking to right now?',
@@ -16,3 +25,15 @@ const monologueLines = [
   'No.',
   'I am the one who knocks!'
 ];
+
+const wordCountMap = monologueLines.reduce((map, sentence) => {
+  const wordCount = sentence.split(' ').length;
+  debugger
+  if (!map[wordCount]) {  // 
+    map[wordCount] = 0;
+  }
+
+  map[wordCount]++;
+
+  return map;
+}, {});
